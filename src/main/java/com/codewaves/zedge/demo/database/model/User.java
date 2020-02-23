@@ -4,24 +4,24 @@ import org.jdbi.v3.core.mapper.reflect.ColumnName;
 
 public class User {
 
-  private long id;
-  private long artistId;
+  private Integer id;
+  private Integer artistId;
 
-  public long getId() {
+  public Integer getId() {
     return id;
   }
 
   @ColumnName("user_id")
-  public void setId(long id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
-  public long getArtistId() {
+  public Integer getArtistId() {
     return artistId;
   }
 
   @ColumnName("artist_id")
-  public void setArtistId(long artistId) {
+  public void setArtistId(Integer artistId) {
     this.artistId = artistId;
   }
 }

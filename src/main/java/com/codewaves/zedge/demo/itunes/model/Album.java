@@ -11,7 +11,7 @@ public class Album {
   private String wrapperType;
   @JsonProperty(access = Access.WRITE_ONLY)
   private String collectionType;
-  private long collectionId;
+  private Integer collectionId;
   private String collectionName;
   private String artistName;
   private String collectionCensoredName;
@@ -21,7 +21,7 @@ public class Album {
   private String artworkUrl100;
   private Double collectionPrice;
   private String collectionExplicitness;
-  private int trackCount;
+  private Integer trackCount;
   private String copyright;
   private String country;
   private String currency;
@@ -31,7 +31,7 @@ public class Album {
   @JsonCreator
   public Album(@JsonProperty(value = "wrapperType", required = true) String wrapperType,
       @JsonProperty(value = "collectionType") String collectionType,
-      @JsonProperty(value = "collectionId") long collectionId,
+      @JsonProperty(value = "collectionId") Integer collectionId,
       @JsonProperty(value = "collectionName") String collectionName,
       @JsonProperty(value = "artistName") String artistName,
       @JsonProperty(value = "collectionCensoredName") String collectionCensoredName,
@@ -41,7 +41,7 @@ public class Album {
       @JsonProperty(value = "artworkUrl100") String artworkUrl100,
       @JsonProperty(value = "collectionPrice") Double collectionPrice,
       @JsonProperty(value = "collectionExplicitness") String collectionExplicitness,
-      @JsonProperty(value = "trackCount") int trackCount,
+      @JsonProperty(value = "trackCount") Integer trackCount,
       @JsonProperty(value = "copyright") String copyright,
       @JsonProperty(value = "country") String country,
       @JsonProperty(value = "currency") String currency,
@@ -85,11 +85,11 @@ public class Album {
     this.collectionType = collectionType;
   }
 
-  public long getCollectionId() {
+  public Integer getCollectionId() {
     return collectionId;
   }
 
-  public void setCollectionId(long collectionId) {
+  public void setCollectionId(Integer collectionId) {
     this.collectionId = collectionId;
   }
 
@@ -165,11 +165,11 @@ public class Album {
     this.collectionExplicitness = collectionExplicitness;
   }
 
-  public int getTrackCount() {
+  public Integer getTrackCount() {
     return trackCount;
   }
 
-  public void setTrackCount(int trackCount) {
+  public void setTrackCount(Integer trackCount) {
     this.trackCount = trackCount;
   }
 

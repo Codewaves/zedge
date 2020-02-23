@@ -21,7 +21,7 @@ public class CachedITunesServiceImpl implements CachedITunesService {
 
   @Cacheable(cacheNames = {"itunes_top"})
   @Override
-  public List<Album> top(long artistId) {
+  public List<Album> top(Integer artistId) {
     return iTunesService.topRequest(artistId);
   }
 }

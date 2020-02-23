@@ -8,22 +8,22 @@ import java.util.List;
 public class TopResult {
 
   @JsonProperty(required = true)
-  private int resultCount;
+  private Integer resultCount;
   @JsonProperty(required = true)
   private List<Album> results;
 
   @JsonCreator
-  public TopResult(@JsonProperty(value = "resultCount", required = true) int resultCount,
+  public TopResult(@JsonProperty(value = "resultCount", required = true) Integer resultCount,
       @JsonProperty(value = "results", required = true) List<Album> results) {
     this.resultCount = resultCount;
     this.results = results;
   }
 
-  public int getResultCount() {
+  public Integer getResultCount() {
     return resultCount;
   }
 
-  public void setResultCount(int resultCount) {
+  public void setResultCount(Integer resultCount) {
     this.resultCount = resultCount;
   }
 

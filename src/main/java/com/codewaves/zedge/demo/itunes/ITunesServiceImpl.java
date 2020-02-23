@@ -52,7 +52,7 @@ public class ITunesServiceImpl {
     return result.getResults();
   }
 
-  public List<Album> topRequest(long artistId) {
+  public List<Album> topRequest(Integer artistId) {
     final TopResult result = restTemplate.getForObject(TOP_URL, TopResult.class, artistId);
     if (result == null) {
       throw new RestClientException("Invalid iTunes lookup response");

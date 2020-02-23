@@ -8,7 +8,7 @@ public interface UserRepository {
    * @param userId the user id.
    * @return the user's favorite artist id
    */
-  long getFavoriteArtist(long userId);
+  Integer getFavoriteArtist(Integer userId);
 
   /**
    * Sets user's favorite artist id.
@@ -16,5 +16,5 @@ public interface UserRepository {
    * @param userId   the user id
    * @param artistId the artist id to set
    */
-  void setFavoriteArtist(long userId, long artistId);
+  void setFavoriteArtist(Integer userId, Integer artistId);
 }

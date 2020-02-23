@@ -5,7 +5,8 @@ import com.codewaves.zedge.demo.model.FavoriteArtist;
 import com.codewaves.zedge.demo.itunes.CachedITunesService;
 import com.codewaves.zedge.demo.itunes.model.Album;
 import com.codewaves.zedge.demo.itunes.model.Artist;
-import java.nio.charset.Charset;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,8 +29,6 @@ public class DemoApplication {
   private UserRepository userRepository;
 
   public static void main(String[] args) {
-    System.out.println(Charset.defaultCharset().displayName());
-
     SpringApplication.run(DemoApplication.class, args);
   }
 
@@ -39,15 +38,15 @@ public class DemoApplication {
   }
 
   @RequestMapping(value = "favorite", method = RequestMethod.POST)
-  public ResponseEntity<?> favorite(@RequestParam("user") long userId,
-      @RequestBody FavoriteArtist artist) {
+  public ResponseEntity<?> favorite(@RequestParam("user") Integer userId,
+      @NotNull @Valid @RequestBody FavoriteArtist artist) {
     userRepository.setFavoriteArtist(userId, artist.getId());
     return new ResponseEntity<>(HttpStatus.NO_CONTENT);
   }
 
   @RequestMapping(value = "top", method = RequestMethod.GET)
-  public ResponseEntity<Iterable<Album>> top(@RequestParam("user") long userId) {
-    final long artistId = userRepository.getFavoriteArtist(userId);
+  public ResponseEntity<Iterable<Album>> top(@RequestParam("user") Integer userId) {
+    final Integer artistId = userRepository.getFavoriteArtist(userId);
     return new ResponseEntity<>(iTunesService.top(artistId), HttpStatus.OK);
   }
 }

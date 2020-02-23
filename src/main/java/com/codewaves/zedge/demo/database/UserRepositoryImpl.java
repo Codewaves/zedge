@@ -17,7 +17,7 @@ public class UserRepositoryImpl implements UserRepository {
   }
 
   @Override
-  public long getFavoriteArtist(long userId) {
+  public Integer getFavoriteArtist(Integer userId) {
     final User user = userDao.getUserById(userId);
     if (user == null) {
       throw new UserNotFound();
@@ -27,7 +27,7 @@ public class UserRepositoryImpl implements UserRepository {
   }
 
   @Override
-  public void setFavoriteArtist(long userId, long artistId) {
+  public void setFavoriteArtist(Integer userId, Integer artistId) {
     userDao.updateOrInsertUser(userId, artistId);
   }
 }

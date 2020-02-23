@@ -20,5 +20,5 @@ public interface CachedITunesService {
    * @param artistId the artist id
    * @return the list of the artist albums
    */
-  List<Album> top(long artistId);
+  List<Album> top(Integer artistId);
 }

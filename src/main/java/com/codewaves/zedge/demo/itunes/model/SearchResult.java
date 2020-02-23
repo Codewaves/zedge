@@ -7,21 +7,21 @@ import java.util.List;
 
 public class SearchResult {
 
-  private int resultCount;
+  private Integer resultCount;
   private List<Artist> results;
 
   @JsonCreator
-  public SearchResult(@JsonProperty(value = "resultCount", required = true) int resultCount,
+  public SearchResult(@JsonProperty(value = "resultCount", required = true) Integer resultCount,
       @JsonProperty(value = "results", required = true) List<Artist> results) {
     this.resultCount = resultCount;
     this.results = results;
   }
 
-  public int getResultCount() {
+  public Integer getResultCount() {
     return resultCount;
   }
 
-  public void setResultCount(int resultCount) {
+  public void setResultCount(Integer resultCount) {
     this.resultCount = resultCount;
   }
 
